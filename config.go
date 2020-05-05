@@ -14,9 +14,9 @@ type config struct {
 	TargetMail     []string
 }
 
-func ParseConfig() *config {
+func ParseConfig(path string) *config {
 	conf := &config{}
-	jsonFile, err := os.Open("config.json")
+	jsonFile, err := os.Open(path)
 	if err != nil {
 		log.Println("Unable to read config file:", err)
 		return nil

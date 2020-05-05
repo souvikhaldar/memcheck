@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"os/exec"
@@ -11,7 +12,9 @@ import (
 )
 
 func main() {
-	conf := ParseConfig()
+	configPath := flag.String("config", "config.json", "path for config file")
+	flag.Parse()
+	conf := ParseConfig(*configPath)
 	ip, _ := exec.Command("curl", "ifconfig.co").Output()
 	if len(ip) > 20 {
 		log.Println("IP could not be traced")

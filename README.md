@@ -16,8 +16,8 @@ This is light-weight tool using which you can check what is current status of am
 
 # Usage  
 Now you can run the `memcheck -config=<path-to-config-file` binary generated inside the directory. Ideally one is supposed to run this binary using a cron job at a suitable interval.  
-For eg, if you want to run this tool once daily add the following cronjob (`crontab -e`):  
+For eg, if you want to run this tool once every hour add the following cronjob (`crontab -e`):  
 ```
-@daily /path/to/memcheck/binary
+@hourly /path/to/memcheck/binary
 ```
 
